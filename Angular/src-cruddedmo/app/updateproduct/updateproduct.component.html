@@ -1,0 +1,26 @@
+<p>updateproduct </p>
+
+<h1>Update Product form</h1>
+<form action="" #updateForm="ngForm" (ngSubmit)="updateFormData(updateForm.value,updateForm.value.id)" class="container col-md-4">
+
+    <div>
+      <label for="id">Enter Id</label>
+      <input type="text" name="id" required  class="form-control" ngModel >
+    </div>
+
+    <div>
+      <label for="name">Enter Name</label>
+      <input type="text" name="name" required  class="form-control" ngModel >
+    </div>
+
+    <div>
+      <label for="price">Enter price</label>
+      <input type="text" name="price" required  class="form-control" ngModel>
+    </div>   
+   
+
+    <br>
+
+    <button type="submit" class="btn btn-primary" >Update</button>
+
+  </form>

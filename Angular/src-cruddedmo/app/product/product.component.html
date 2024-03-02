@@ -1,0 +1,46 @@
+
+
+<button type="button"   (click)="getAllProducts()">get products</button>
+
+<!-- <h3>{{productList|json}}</h3> -->
+<div class="container col-md-4">
+    <table class="table table-striped table-dark">
+        <tr><th>Id</th><th>Name</th><th>Price</th></tr>
+        <tr *ngFor="let products of productList">
+            <td>{{products.id}}</td><td>{{products.name}}</td><td>{{products.price}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="deleteById(products.id)">delete</button></td>
+        </tr>
+    
+    
+    </table>
+
+</div>
+<br>
+<br>
+
+<div class="container col-md-4">
+    <h1>Search by name</h1>
+    <form #searchForm="ngForm" >
+        <div>
+            <label for="pname">Enter product Name</label>
+            <input type="text" name="pname" required  class="form-control" ngModel >
+        </div>
+        <br><br>
+        <button type="button" class="btn btn-primary" (click)="getByName(searchForm.value.pname)" >Search</button>
+    </form>
+</div>
+
+<div class="container col-md-4">
+    <table class="table table-striped table-dark">
+        <tr><th>Id</th><th>Name</th><th>Price</th></tr>
+        <tr *ngFor="let products of productListByName">
+            <td>{{products.id}}</td><td>{{products.name}}</td><td>{{products.price}}</td>
+        </tr>
+    
+    
+    </table>
+
+</div>
+
+
+

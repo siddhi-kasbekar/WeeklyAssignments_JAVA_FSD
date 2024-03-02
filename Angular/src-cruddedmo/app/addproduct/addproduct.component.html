@@ -1,0 +1,28 @@
+<p>addproduct works!</p>
+<h1>Add Product form</h1>
+<form action="" #addForm="ngForm" (ngSubmit)="getFormData(addForm.value)" class="container col-md-4">
+
+    <div>
+      <label for="id">Enter Id</label>
+      <input type="text" name="id" required  class="form-control" ngModel >
+    </div>
+
+    <div>
+      <label for="name">Enter Name</label>
+      <input type="text" name="name" required  class="form-control" ngModel >
+    </div>
+
+    <div>
+      <label for="price">Enter price</label>
+      <input type="text" name="price" required  class="form-control" ngModel>
+    </div>   
+   
+
+    <br>
+
+    <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">Add</button>
+
+  </form>
+
+
+  

@@ -1,0 +1,26 @@
+<h1 *ngIf="true">Hello friends</h1>
+
+<h2 *ngIf="5>2">Welcome to my webapp</h2>
+
+enter your choice - <input type="text" [(ngModel)]="num1">
+
+<div class="class1" [ngSwitch]="num1">
+  <div *ngSwitchCase="1">one</div>
+  <div *ngSwitchCase="2">two</div>
+  <div *ngSwitchCase="3">three</div>
+  <div *ngSwitchDefault>default</div>
+
+</div>
+
+enter your tech choice - <input type="text" [(ngModel)]="tech">
+<div class="class1" [ngSwitch]="tech">
+  <div *ngSwitchCase="'java'"><img src="../assets/java.jpg" alt="java"></div>
+  <div *ngSwitchCase="'.net'"><img src="../assets/net.jpg" alt="python"></div>
+  <div *ngSwitchCase="'python'"><img src="../assets/python.jpg" alt=".net"></div>
+  <div *ngSwitchDefault>default</div>
+
+</div>
+<br>
+<div *ngFor="let i of arr ;let j  = index">count {{i}} index {{j}}</div>
+
+<h1 ngNonBindable>Hello {{friends}}</h1>

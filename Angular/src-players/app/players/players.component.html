@@ -1,0 +1,73 @@
+<p>players List</p>
+
+<div class="container col-md-4">
+    <h1>Search By matches played</h1>
+    <!-- <form #searchForm="ngForm" >
+        <div>
+            <label for="start">Start of range</label>
+            <input type="text" name="start" required  class="form-control" ngModel #startInput="ngModel" >
+            <div *ngIf="startInput.errors?.['required']" class="invalid-feedback">Start of range is required</div>
+
+        </div>
+        <br>
+        <div>
+            <label for="end">End of range</label>
+            <input type="text" name="end" required  class="form-control" ngModel #endInput="ngModel" >
+            <div *ngIf="endInput.errors?.['required']" class="invalid-feedback">End of range is required</div>
+      <div *ngIf="endInput.errors?.['min']" class="invalid-feedback">End of range must be greater than Start of range</div>
+        </div><br>
+        <button type="button" class="btn btn-primary" (click)="getByMatches(searchForm.value.start,searchForm.value.end)" >Search</button>
+    </form> -->
+
+    <form [formGroup]="searchForm" (ngSubmit)="getByMatches(searchForm.value.start,searchForm.value.end)">
+        <div>
+          <label for="start">Start of range</label>
+          <input type="text" formControlName="start" class="form-control" />
+          <div *ngIf="searchForm.get('start')?.invalid && searchForm.get('start')?.touched" class="invalid-feedback">Start of range is required</div>
+        </div>
+        <br>
+        <div>
+          <label for="end">End of range</label>
+          <input type="text" formControlName="end" class="form-control" />
+          <div *ngIf="searchForm.get('end')?.invalid && searchForm.get('end')?.touched" class="invalid-feedback">End of range is required</div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+</div>
+
+<div class="container col-md-4">
+    <table class="table table-striped table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>jerseyNumber</th>
+            <th>role</th>
+            <th>matches</th>
+            <th>Team</th>
+            <th>country</th>
+            <th>description</th>
+
+
+        </tr>
+        <tr *ngFor="let players of playerList">
+            <td>{{players.playerId}}</td>
+            <td>{{players.playerName}}</td>
+            <td>{{players.jerseyNumber}}</td>
+            <td>{{players.role}}</td>
+            <td>{{players.totalMatches}}</td>
+            <td>{{players.teamName}}</td>
+            <td>{{players.countryName}}</td>
+            <td>{{players.description}}</td>
+
+
+        </tr>
+    
+    
+    </table>
+
+</div>
+
+<div>
+    <app-add-player></app-add-player>
+</div>

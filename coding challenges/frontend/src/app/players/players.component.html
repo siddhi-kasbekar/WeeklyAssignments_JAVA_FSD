@@ -1,0 +1,72 @@
+<br>
+<br>
+
+<div class="container col-md-4">
+    <h1>Search By matches played</h1>
+    <form #searchForm="ngForm" (ngSubmit)="getByMatches(searchForm)">
+        <div>
+          <label for="start">Start of range</label>
+          <input type="text" name="start" ngModel #start="ngModel" class="form-control" required placeholder="enter start value"/>
+          <span *ngIf="start.touched && start.invalid" class="invalid-feedback" style="color: red">
+            Start of range is required
+          </span>
+        </div>
+      
+        <br>
+      
+        <div>
+          <label for="end">End of range</label>
+          <input type="text" name="end" ngModel #end="ngModel" class="form-control" required placeholder="enter value greater than start "/>
+          <span *ngIf="end.touched && end.invalid" class="invalid-feedback" style="color: red">
+            end value is required
+          </span>
+        </div>
+      
+        <br>
+      
+        <button type="submit" class="btn btn-primary" [disabled]="searchForm.invalid">Search</button>
+      </form>
+      
+    
+    
+
+
+   
+</div>
+<br>
+<br>
+<br>
+<h2 style="display: flex; text-align: center; align-items: center;">
+    Players List
+</h2>
+<div class="container col-md-4">
+    <table class="table table-striped border">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>jerseyNumber</th>
+            <th>role</th>
+            <th>matches</th>
+            <th>Team</th>
+            <th>country</th>
+            <th>description</th>
+
+
+        </tr>
+        <tr *ngFor="let players of playerList">
+            <td>{{players.playerId}}</td>
+            <td>{{players.playerName}}</td>
+            <td>{{players.jerseyNumber}}</td>
+            <td>{{players.role}}</td>
+            <td>{{players.totalMatches}}</td>
+            <td>{{players.teamName}}</td>
+            <td>{{players.countryName}}</td>
+            <td>{{players.description}}</td>
+
+
+        </tr>
+
+
+    </table>
+
+</div>

@@ -1,0 +1,57 @@
+<p>add-player works!</p>
+
+<form [formGroup]="addPlayerForm" class="container col-md-5" (ngSubmit)="onSubmit(addPlayerForm.value)">
+
+    <div class="form-group">
+      <label for="playerName">Player Name</label>
+      <input type="text" formControlName="playerName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['playerName'].errors }">
+      <div *ngIf="submitted && f['playerName'].errors" class="invalid-feedback">Invalid Input</div>
+      <div *ngIf="f['playerName'].errors?.['required']" style="color: red;">Player Name is required</div>
+    </div>
+  
+    <div class="form-group">
+      <label for="jerseyNumber">Jersey Number</label>
+      <input type="number" formControlName="jerseyNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['jerseyNumber'].errors }">
+      <div *ngIf="submitted && f['jerseyNumber'].errors" class="invalid-feedback">Invalid Input</div>
+      <div *ngIf="f['jerseyNumber'].errors?.['required']" style="color: red;">Jersey Number is required</div>
+    </div>
+  
+    <div class="form-group">
+      <label for="role">Role</label>
+      <input type="text" formControlName="role" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['role'].errors }">
+      <div *ngIf="submitted && f['role'].errors" class="invalid-feedback">Invalid Input</div>
+      <div *ngIf="f['role'].errors?.['required']" style="color: red;">Role is required</div>
+    </div>
+  
+    <div class="form-group">
+      <label for="totalMatches">Total Matches</label>
+      <input type="number" formControlName="totalMatches" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['totalMatches'].errors }">
+      <div *ngIf="submitted && f['totalMatches'].errors" class="invalid-feedback">Invalid Input</div>
+      <div *ngIf="f['totalMatches'].errors?.['required']" style="color: red;">Total Matches is required</div>
+    </div>
+  
+    <div class="form-group">
+      <label for="teamName">Team Name</label>
+      <input type="text" formControlName="teamName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['teamName'].errors }">
+      <div *ngIf="submitted && f['teamName'].errors" class="invalid-feedback">Invalid Input</div>
+      <div *ngIf="f['teamName'].errors?.['required']" style="color: red;">Team Name is required</div>
+    </div>
+  
+    <div class="form-group">
+      <label for="countryName">Country Name</label>
+      <input type="text" formControlName="countryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['countryName'].errors }">
+      <div *ngIf="submitted && f['countryName'].errors" class="invalid-feedback">Invalid Input</div>
+      <div *ngIf="f['countryName'].errors?.['required']" style="color: red;">Country Name is required</div>
+    </div>
+  
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['description'].errors }"></textarea>
+      <div *ngIf="submitted && f['description'].errors" class="invalid-feedback">Invalid Input</div>
+    </div>
+  
+    <br>
+    <button type="submit" [disabled]="!addPlayerForm.valid" class="btn btn-primary">Add Player</button>
+  
+  </form>
+  

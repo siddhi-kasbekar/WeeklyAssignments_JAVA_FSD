@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Sample Form</h2>
+
+<form action="#" method="post">
+
+    <label for="text">Text Input:</label>
+    <input type="text" id="text" name="text" placeholder="Enter text">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter password">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter email">
+
+    <label for="number">Number:</label>
+    <input type="number" id="number" name="number" placeholder="Enter number">
+
+    <label for="checkbox">Checkbox:</label>
+    <input type="checkbox" id="checkbox" name="checkbox" value="1">
+    <label for="checkbox">Check me</label>
+
+    <label>Radio Buttons:</label>
+    <input type="radio" id="radio1" name="radio_group" value="option1">
+    <label for="radio1">Option 1</label>
+    <input type="radio" id="radio2" name="radio_group" value="option2">
+    <label for="radio2">Option 2</label>
+
+    <label for="select-dropdown">Select:</label>
+    <select id="select-dropdown" name="select_input">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+    </select>
+
+    
+    <label for="textarea-input">Textarea:</label>
+    <textarea id="textarea-input" name="textarea_input" placeholder="Enter text"></textarea>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>

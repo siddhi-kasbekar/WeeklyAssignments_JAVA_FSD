@@ -1,0 +1,39 @@
+<form [formGroup]="registerForm" class="container col-md-5"  (ngSubmit)="onSubmit()" >
+
+    <div class="form-group ">
+        <label for="firstName">First Name</label>
+        <input type="text" formControlName="firstName" class="form-control"  [ngClass]="{ 'is-invalid': submitted 
+        && f['firstName'].errors }">
+        <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">Invalid Input</div>
+        <div *ngIf="f['firstName'].errors?.['required']" style="color: red;">FirstName is required</div>
+    </div>
+
+    <div class="form-group ">
+        <label for="lastName">last Name</label>
+        <input type="text" formControlName="lastName" class="form-control"  [ngClass]="{ 'is-invalid': submitted 
+        && f['lastName'].errors }">
+        <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">Invalid Input</div>
+        <div *ngIf="f['lastName'].errors?.['required']" style="color: red;">LastName is required</div>
+    </div>
+
+    <div class="form-group ">
+        <label for="email">Email</label>
+        <input type="text" formControlName="email" class="form-control"  [ngClass]="{ 'is-invalid': submitted 
+        && f['email'].errors }">
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">Invalid email</div>
+        <div *ngIf="f['email'].errors?.['required']" style="color: red;">Email is required</div>
+    </div>
+
+    <div class="form-group ">
+        <label for="password">Password</label>
+        <input type="text" formControlName="password" class="form-control"  [ngClass]="{ 'is-invalid': submitted 
+        && f['password'].errors }">
+        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">Invalid password</div>
+        <div *ngIf="f['password'].errors?.['required']" style="color: red;">Email is required</div>
+    </div>
+
+    <br>
+    <button type="submit" [disabled]="!registerForm.valid"  class="btn btn-primary">Register</button>
+
+
+</form>
